@@ -5,6 +5,9 @@ body {
   font-family: 'Helvetica';
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: #ffe69a;
 }
 
 .btn-burger {
@@ -13,10 +16,13 @@ body {
   height: $size;
   width: $size;
 
-  background: rgba(red, 0.1);
+  // background: rgba(red, 0.1);
   position: relative;
 
   $offsetY: 7px;
+
+  margin-top: 100px;
+  margin-bottom: 300px;
 
   .bar {
     position: absolute;
@@ -67,6 +73,108 @@ body {
 
     .bar--2 {
       transform: translate3d(0, calc(2 * #{$offsetY}), 0) rotate(-225deg);
+    }
+  }
+}
+
+.menu-title {
+  font-size: 100px;
+  font-weight: lighter;
+  // letter-spacing: -6px;
+  // $transitionTime: 150ms ease;
+  // visibility: hidden;
+  opacity: 0;
+
+  transition: opacity 1s ease;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  span {
+    transition: transform 50ms;
+    transform-origin: bottom left;
+    display: inline-block;
+
+    &:nth-child(1) {
+      transition-delay: 550ms;
+    }
+    &:nth-child(2) {
+      transition-delay: 500ms;
+    }
+    &:nth-child(3) {
+      transition-delay: 450ms;
+    }
+    &:nth-child(4) {
+      transition-delay: 400ms;
+    }
+    &:nth-child(5) {
+      transition-delay: 350ms;
+    }
+    &:nth-child(6) {
+      transition-delay: 300ms;
+    }
+    &:nth-child(7) {
+      transition-delay: 250ms;
+    }
+    &:nth-child(8) {
+      transition-delay: 200ms;
+    }
+    &:nth-child(9) {
+      transition-delay: 150ms;
+    }
+    &:nth-child(10) {
+      transition-delay: 100ms;
+    }
+    &:nth-child(11) {
+      transition-delay: 50ms;
+    }
+    &:nth-child(12) {
+      transition-delay: 0ms;
+    }
+  }
+
+  &:hover {
+    span {
+      transform: rotate(12deg);
+
+      &:nth-child(1) {
+        transition-delay: 0ms;
+      }
+      &:nth-child(2) {
+        transition-delay: 50ms;
+      }
+      &:nth-child(3) {
+        transition-delay: 100ms;
+      }
+      &:nth-child(4) {
+        transition-delay: 150ms;
+      }
+      &:nth-child(5) {
+        transition-delay: 200ms;
+      }
+      &:nth-child(6) {
+        transition-delay: 250ms;
+      }
+      &:nth-child(7) {
+        transition-delay: 300ms;
+      }
+      &:nth-child(8) {
+        transition-delay: 350ms;
+      }
+      &:nth-child(9) {
+        transition-delay: 400ms;
+      }
+      &:nth-child(10) {
+        transition-delay: 450ms;
+      }
+      &:nth-child(11) {
+        transition-delay: 500ms;
+      }
+      &:nth-child(12) {
+        transition-delay: 550ms;
+      }
     }
   }
 }
