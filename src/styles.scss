@@ -26,24 +26,47 @@ body {
     height: 3px;
     background: #000;
 
-    transition: transform 1s ease;
+    transition: transform 0.8s ease;
 
     &.bar--1 {
-      transform: translateY(-$offsetY);
+      transform: translate3d(0, -$offsetY, 0);
     }
 
     &.bar--2 {
-      transform: translateY($offsetY);
+      transform: translate3d(0, $offsetY, 0);
     }
   }
 
   &:hover {
     .bar--1 {
-      transform: translateY(-$offsetY) rotate(-180deg);
+      transform: translate3d(0, -$offsetY, 0) rotate(-180deg);
     }
 
     .bar--2 {
-      transform: translateY($offsetY) rotate(-180deg);
+      transform: translate3d(0, $offsetY, 0) rotate(-180deg);
+    }
+
+    &.active {
+      .bar--1 {
+        transform: translate3d(0, calc(2 * #{$offsetY}), 0) rotate(-495deg);
+      }
+
+      .bar--2 {
+        transform: translate3d(0, calc(2 * #{$offsetY}), 0) rotate(-45deg);
+      }
+    }
+  }
+
+  &.active {
+    .bar {
+      transition: transform 0.6s ease;
+    }
+    .bar--1 {
+      transform: translate3d(0, calc(2 * #{$offsetY}), 0) rotate(-675deg);
+    }
+
+    .bar--2 {
+      transform: translate3d(0, calc(2 * #{$offsetY}), 0) rotate(-225deg);
     }
   }
 }
