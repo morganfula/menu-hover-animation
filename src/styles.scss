@@ -8,30 +8,42 @@ body {
 }
 
 .btn-burger {
-  $size: 100px;
+  $size: 50px;
 
   height: $size;
   width: $size;
 
-  background: red;
+  background: rgba(red, 0.1);
   position: relative;
+
+  $offsetY: 7px;
 
   .bar {
     position: absolute;
     left: 0;
 
     width: 100%;
-    height: 10px;
+    height: 3px;
     background: #000;
 
+    transition: transform 1s ease;
+
     &.bar--1 {
-      top: calc(50% - 15px);
-      transform: translateY(-50%);
+      transform: translateY(-$offsetY);
     }
 
     &.bar--2 {
-      bottom: calc(50% - 15px);
-      transform: translateY(+50%);
+      transform: translateY($offsetY);
+    }
+  }
+
+  &:hover {
+    .bar--1 {
+      transform: translateY(-$offsetY) rotate(-180deg);
+    }
+
+    .bar--2 {
+      transform: translateY($offsetY) rotate(-180deg);
     }
   }
 }
